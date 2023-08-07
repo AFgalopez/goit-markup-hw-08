@@ -1,0 +1,48 @@
+.subs__p {
+  color: #FFF;
+  font-family: Roboto;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0.42px;
+  text-transform: uppercase;
+}
+
+.subs__form {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.subs__email {
+  color: rgba(255, 255, 255, 0.60);
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px; /* 125% */
+  letter-spacing: 0.48px;
+  outline: none;
+  width: 335px;
+  height: 50px;
+  padding-left: 16px;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.30);
+  background: rgba(33, 150, 243, 0.00);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+
+  &:is(:hover, :focus) {
+      border-color: $primary-color;
+  }
+}
+
+.button--flex {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.subs__svg {
+  display: flex;
+}

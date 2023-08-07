@@ -1,0 +1,108 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    padding: 25px 0;
+
+    &__nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-left: 8%;
+    }
+
+    &__options,
+    &__contact {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-right: 8%;
+        position: relative;     
+
+        & .header__link-address {    
+            display: flex;
+            align-items: center;
+            font-family: 'Roboto';    
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 1.1;
+            color: $text-color-secondary;
+            text-decoration: none;
+            margin: 0px 20px;
+            gap: 10px;
+        }
+    }
+
+    &__options {
+        & .header__link {     
+            font-family: 'Roboto';    
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 1.1;
+            color: $text-color-primary;
+            text-decoration: none;
+            margin-left: 50px;
+            position: relative;
+            transition: color 0.3s ease; 
+
+            &:is(:hover, :focus) {
+                color: $primary-color;    
+                
+            }                       
+            &::after {
+                position: absolute;
+                border-radius: 10px;
+                content: "";
+                left: 0;
+                bottom: -33px;
+                width: 100%;
+                border: 2px solid $primary-color;
+                opacity: 0; 
+                transition: opacity 400ms cubic-bezier(0.4, 0, 0.2, 1);   
+            }
+
+            &:hover::after {
+                opacity: 1;    
+            }
+            &--active {
+                color: $primary-color;
+                &::after {
+                    position: absolute;
+                    border-radius: 10px;
+                    content: "";
+                    left: 0;
+                    bottom: -33px;
+                    width: 100%;
+                    border: 2px solid $primary-color;
+                    opacity: 1;    
+                }
+            } 
+        }
+    }
+
+    &__contact {
+        & .header__icon-mail {
+            width: 16px;
+            height: 12px;
+            fill: $text-color-secondary;
+        }
+
+        & .header__icon-cellphone {
+            width: 10px;
+            height: 16px;
+            fill: $text-color-secondary;
+        }
+
+        & .header__link-address:is(:hover, :focus) {
+            color: $primary-color;
+
+            & .header__icon-mail {
+                fill: $primary-color;
+            }
+
+            & .header__icon-cellphone {
+                fill: $primary-color;
+            }
+        }
+    }
+}
