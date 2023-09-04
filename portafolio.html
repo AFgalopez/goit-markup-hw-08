@@ -16,8 +16,8 @@
     <header>
         <div class="container">            
             <div class="header">
-                <nav class="header__nav">
-                    <a class="logo" href="#">WebStudio</a>
+                <a class="logo" href="#">WebStudio</a>
+                <nav class="header__nav">                    
                     <ul class="header__options">
                         <li>
                             <a href="./index.html" class="header__link">Estudio</a>
@@ -46,6 +46,29 @@
                         </a>
                     </li>
                 </ul>
+                 <!-- Aqui va el boton para el menu despegable-->
+                 <div class="menu">
+                    <button
+                      class="menu-toggle js-open-menu"
+                      aria-expanded="false"
+                      aria-controls="mobile-menu"
+                    >
+                      <svg
+                        width="24"
+                        height="24"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                          clip-rule="evenodd"
+                        ></path>
+                      </svg>
+                    </button>
+                    
+                </div>
             </div>            
         </div>            
     </header>
@@ -211,6 +234,66 @@
                 </form>              
             </div>
         </div>
-    </footer>    
+    </footer> 
+    <!-- Aqui estara el modal mobile -->
+    <div class="menu-container js-menu-container" id="mobile-menu">
+        <button class="menu-toggle js-close-menu">
+          <svg
+            fill="currentColor"
+            viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+        <!-- Aqui se crea el menu del modal -->
+        <div class="mobile">
+
+            <nav class="mobile__nav">                    
+                <ul class="mobile__options mobile-menu">
+                    <li>
+                        <a href="./index.html" class="mobile__link mobile__link--active">Estudio</a>
+                    </li>
+                    <li>
+                        <a href="./portafolio.html" class="mobile__link">Portafolio</a>
+                    </li>
+                    <li>
+                        <a href="#" class="mobile__link">Contactos</a>
+                    </li>
+                </ul>             
+            </nav>        
+            <ul class="mobile__contact">
+                <li class="flex-list">                    
+                    <a class="mobile__link-address" href="mailto:info@devstudio.com" target="_blank" rel="noopener noreferrer">
+                        <svg class="mobile__icon-mail">
+                        <use href="./img/icons.svg#icon-mail" ></use>
+                        </svg> info@devstudio.com
+                    </a>                    
+                </li>                
+                <li class="flex-list">
+                    <a class="mobile__link-address" href="tel:+525555296000" target="_blank" rel="noopener noreferrer">
+                        <svg class="mobile__icon-cellphone">
+                        <use href="./img/icons.svg#icon-cellphone" ></use>
+                        </svg> +52 55 5529 6000
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- Finaliza el menu del modal -->
+        <!-- <ul class="mobile-menu">
+          <li><a href="" class="link">About</a></li>
+          <li><a href="" class="link">Products</a></li>
+          <li><a href="" class="link">Contacts</a></li>
+          <li><a href="" class="link">Career</a></li>
+        </ul> -->
+      </div>   
+    </div>  
+    <script src="./mobile-menu.js"></script> 
 </body>
 </html>

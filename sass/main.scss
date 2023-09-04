@@ -1,4 +1,6 @@
 @import "./utils/variables";
 @import "./base/commons", "./base/container";
-@import "./components/button", "./components/modal", "./components/hidden", "./components/checkbox","./components/form", "./components/logo", "./components/social","./components/subscription";
+@import "./components/button", "./components/modal", "./components/modal-mobile",
+  "./components/hidden", "./components/checkbox", "./components/form",
+  "./components/logo", "./components/social", "./components/subscription";
 @import "./layout/header", "./layout/main", "./layout/footer";

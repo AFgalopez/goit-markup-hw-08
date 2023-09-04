@@ -1,53 +1,111 @@
 .backdrop {
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: #111111bd;
-    display: flex;
-    transition: opacity 300ms ease, visibility 300ms ease;
-    opacity: 100%;
-    pointer-events: auto;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #111111bd;
+  display: flex;
+  transition: opacity 300ms ease, visibility 300ms ease;
+  opacity: 100%;
+  pointer-events: auto;
 
-    &.is-hidden {
-        visibility: hidden;
-        opacity: 0;
-        pointer-events: none;
-    }
-
-    &__modal {
-        width: 528px;
-        height: 581px;
-        background-color: $secondary-color;
-        margin: auto;
-        border-radius: 6px;
-        position: relative;
-        box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.20), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
-    }
-    &__close {
-        position: absolute;
-        right: 0;
-        margin: 8px 8px 0 0;
-        cursor: pointer;
-        border-radius: 50%;
-        background-color: $secondary-color;
-        border-color: #0000001A;
-        width: 30px;
-        height: 30px;
-    }    
-    &__icon-close {
-        width: 11px;
-        height: 11px;
-    }
+  &.is-hidden {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+  }
+  &__name,
+  &__tel,
+  &__mail {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    left: 0;
+    top: 11px;
+    margin: 13px;
+  }
+  &__text {
+    width: 100%;
+    padding: 12px 45px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid rgba(33, 33, 33, 0.2);
 
     &:is(:hover, :focus) {
-        & .backdrop__icon-close {
-            fill: $primary-color;
-        }
+      border-color: $primary-color;
     }
+  }
+
+  &__modal {
+    width: 528px;
+    height: 581px;
+    background-color: $secondary-color;
+    margin: auto;
+    border-radius: 6px;
+    position: relative;
+    box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.2),
+      0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+  }
+  &__close {
+    position: absolute;
+    right: 0;
+    margin: 8px 8px 0 0;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: $secondary-color;
+    border-color: #0000001a;
+    width: 30px;
+    height: 30px;
+  }
+  &__icon-close {
+    width: 11px;
+    height: 11px;
+  }
+
+  &:is(:hover, :focus) {
+    & .backdrop__icon-close {
+      fill: $primary-color;
+    }
+  }
 }
 
 .button--center {
-    text-align: center;
+  text-align: center;
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .backdrop {
+    &__modal {
+      width: 56vw;
+    }
+    &__text {
+      padding: 6px 45px;
+    }
+    &__name,
+    &__mail,
+    &__tel {
+      top: 5px;
+    }
+  }
+}
+@media screen and (min-width: 0px) and (max-width: 480px) {
+  .backdrop {
+    &__modal {
+      width: 90vw;
+    }
+    &__text {
+      padding: 6px 45px;
+    }
+    &__name,
+    &__mail,
+    &__tel {
+      top: 5px;
+    }
+    &__form-container {
+      padding: 1% 2%;
+    }
+  }
 }
